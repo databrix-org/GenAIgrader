@@ -1,5 +1,4 @@
 import { URLExt } from '@jupyterlab/coreutils';
-
 import { ServerConnection } from '@jupyterlab/services';
 
 /**
@@ -39,8 +38,41 @@ export async function requestAPI<T>(
   }
 
   if (!response.ok) {
-    throw new ServerConnection.ResponseError(response, data.message || data);
+    const errorData = await response.json();
+    console.error('API Error:', errorData);
+    throw new ServerConnection.ResponseError(response, errorData.error || 'Unknown error', errorData);
   }
 
   return data;
+}
+
+export async function getAssignments(): Promise<any> {
+  console.log('Requesting assignments from:', URLExt.join(ServerConnection.makeSettings().baseUrl, 'GenAIgrader', 'list-assignments'));
+  try {
+    return await requestAPI<any>('list-assignments');
+  } catch (error) {
+    console.error('Error in getAssignments:', error);
+    if (error instanceof ServerConnection.ResponseError) {
+      const errorData = await error.response.json();
+      console.error('Detailed server error:', errorData);
+    }
+    throw error;
+  }
+}
+
+export async function fetchAssignmentDetails(assignmentName: string): Promise<any> {
+  console.log('Fetching assignment details for:', assignmentName);
+  try {
+    const response = await requestAPI<any>(`manage-assignment?assignment_name=${encodeURIComponent(assignmentName)}`, {
+      method: 'GET'
+    });
+    return response;
+  } catch (error) {
+    console.error('Error in fetchAssignmentDetails:', error);
+    if (error instanceof ServerConnection.ResponseError) {
+      const errorData = await error.response.json();
+      console.error('Detailed server error:', errorData);
+    }
+    throw error;
+  }
 }

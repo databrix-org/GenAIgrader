@@ -1,0 +1,5 @@
+Create a ReleaseHandler to handle the user request to release their assignment
+
+It should initialize the nbgrader configuration.
+The Input in the request body is the name of assignment (assignment_id)
+The handler will run the code generate_assignment( assignment_id, force=True, create=True). and return the result, if it is successful to user.

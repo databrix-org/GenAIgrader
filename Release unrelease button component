@@ -1,0 +1,24 @@
+If the assignment is released, show a 'unrelease button' component, otherwise a 'release button' component.
+
+Description of these two components:
+
+'release button' component:
+  - It will show if the release status is Flase
+  - its color is green, locates under the last component of AssignmentOverview
+  - On Click, it will send request to ReleaseHandler, with the assignmentname in the request body
+  - show a pop up window component to tell user wheather the releasement is successful
+  - Once the response is successful, the release status will be changed. and the button disappears
+
+'unrelease button' component
+  - It will show if the release status is True
+  - its color is red, locates under the last component of AssignmentOverview
+  - On Click, it will send request to ReleaseHandler, with the assignmentname in the request body
+  - show a pop up window component to tell user wheather the unreleasement is successful
+  - Once the response is successful, the release status will be changed. and the button disappears
+
+These two component both contains a pop up component.
+
+'release button' component:
+  - It will take the input/props of string
+  - It will pop up when it is called
+  - there is a ok button for user to click. After click, it disappears

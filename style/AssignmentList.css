@@ -1,0 +1,51 @@
+.assignment-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.assignment-card {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 20px;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth effect */
+  cursor: pointer; /* Add this line to change the cursor to a hand */
+}
+
+.assignment-card:hover {
+  transform: scale(1.05); /* Make the card slightly larger on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
+
+.book-icon {
+  font-size: 24px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.new-assignment-card {
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow to match assignment cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth effect */
+}
+
+.new-assignment-card:hover {
+  transform: scale(1.05); /* Make the card slightly larger on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
+
+.plus-symbol {
+  font-size: 48px;
+  color: #666;
+}

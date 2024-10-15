@@ -1,0 +1,147 @@
+.manage-assignment-page {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.manage-assignment-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.left-nav-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  width: 200px;
+  height: 100%;
+  overflow-y: auto;
+  border-right: 1px solid #ddd;
+  padding: 10px;
+}
+
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.left-nav-bar button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  color: #333;
+  text-align: left;
+}
+
+.left-nav-bar button:hover,
+.left-nav-bar button.active {
+  background-color: #e0e0e0;
+}
+
+.left-nav-bar button svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+
+.left-nav-bar button span {
+  font-size: 14px;
+}
+
+.back-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+.back-button svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  position: relative;
+  height: 100%;
+  padding-bottom: 60px; /* Add padding to prevent content from being hidden behind the back button */
+}
+
+/* Add these styles for the assignment overview and submissions */
+.assignment-overview,
+.submissions {
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Adjust table styles for better full-height display */
+.submission-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.submission-table th,
+.submission-table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.submission-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.release-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.unrelease-button {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.release-button:hover, .unrelease-button:hover {
+  opacity: 0.8;
+}

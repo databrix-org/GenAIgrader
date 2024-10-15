@@ -1,0 +1,33 @@
+Help me full this react component. I am using jupyterlab extension template to create this react component.
+https://jupyterlab.readthedocs.io/en/latest/api/classes/filebrowser.FileBrowser-1.html Search this URL and learn how to deal with files in jupyterlab extension.
+This is the structure of this React Component:
+
+-Component EditAssignmentPage
+    - Component 'ListNotebook'
+        - Component 'Delete File Button'
+    - Component 'ListMaterials'
+        - Component 'Delete File Button'
+    - Component 'Upload File Button'
+
+The description for each Component:
+
+Component EditAssignmentPage (input: Directory path):
+
+Component 'ListNotebook'(input: Directory path)
+
+    i. It shows the words 'Your Assignment Notebook'.
+    ii. Search the given directory. Find and List all files end with .ipynb in this directory.
+    iii. Add Component 'Delete File Button' to right side of each listed .ipynb files
+
+Component 'ListMaterials'(input: Directory path):
+
+    i. then show words: 'Your other materials'.
+    ii. Search the given directory. Find and List all other files except .ipynb files in this directory
+    iii. Add Component 'Delete File Button' to right side of each listed file
+
+Component 'Delete File Button':
+    i delete the file on the left side
+Component 'Upload File Button' (input: Directory path):
+    i. Upload selected file to this directory
+
+Firstly, understand the description and the structure of the Components. Then figure out how to write the Code.

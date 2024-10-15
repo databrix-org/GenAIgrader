@@ -1,0 +1,33 @@
+Help me optimize following react components. This is the Structure of the components i want to optimize:
+
+- Component 'Assignment Overview'
+    - Component 'Notebooks'
+        - Component 'Convert to nbgrader Assignment Button'
+        - Component 'Notebook Item'
+
+
+This is the description of each component:
+
+Component 'Assignment Overview' (props: assignmentname, assignmentdirectory)
+    i. Show Title/Header in the middle of the main area: 'Assignment: [assignmentname]'
+    ii Show words 'open in filebrowser'. This is a like to open the assignment directory in jupyterlab filebrowser.
+    iii. show a Notebook container, show 'Jupyter Notebooks' on the top of container
+    iv. Notebook Container contains Component 'Notebooks'.
+
+Component 'Notebooks' (props: assignmentname)
+    i. it should fetch the information of the notebooks by request to ManageAssignmentHandler. (contain assignmentname in the request)
+    ii. the response contains Notebook names and coursedirectory path. let assignmentfilepath of each notebook = coursedirectory path / source / Notebook name
+    iii. For each Notebook, show a Component 'Notebook Item' in a row. Pass assignmentfilepath to it.
+    iv. Set pad between each row
+    v. For each Component 'Notebook Item' show a Component 'Convert to nbgrader Assignment Button' on his right side. set a pad between thems
+
+Component 'Notebook Item' (props: assignmentfilepath)
+    i. it is link (where users can click on it and open the notebook)
+    ii. make this link blue, and the cursor will be a pointer if it is above the link.
+    iii. show a Jupyterlab Icon 'Notebook' on the left side of the Notebook Item.
+
+Component 'Convert to nbgrader Assignment Button'
+    i. it is a button for user to click on
+    ii. The button shows words 'generate Assignment'
+
+Firstly, understand the structure of the Components. Then undertand describtion and details of each component. Finally integrate these components into the structure, and generate the code.
